@@ -6,12 +6,13 @@ import StringIO, rfc822
 import logging
 import MySQLdb
 import sys
+import getpass
 from datetime import datetime
 from dateutil.parser import parse
 
 SERVER = "pop.gmail.com"
 USER  = raw_input("Ingrese su email: ")
-PASSWORD = raw_input("Ingrese su contraseña: ")
+PASSWORD = getpass.getpass("Ingrese su contraseña: ")
 
 logging.debug('connecting to ' + SERVER)
 server = poplib.POP3_SSL(SERVER)
